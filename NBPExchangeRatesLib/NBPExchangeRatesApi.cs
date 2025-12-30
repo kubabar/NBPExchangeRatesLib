@@ -44,7 +44,7 @@ namespace NBPExchangeRatesLib
 
         public ExchangeRateSeries GetLatestExchangeRate(string currency, FetchFormat format = FetchFormat.XML)
         {
-            string url = $"{BaseUrl}{currency}/today/?format={format.ToString().ToLower()}";
+            string url = $"{BaseUrl}{currency}/?format={format.ToString().ToLower()}";
             string rawData = FetchData(url);
 
             return DeserializeData(rawData, format);
